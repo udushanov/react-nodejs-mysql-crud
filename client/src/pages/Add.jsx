@@ -19,7 +19,10 @@ export function Add() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/books", inputs);
+      await axios.post(
+        "https://pacific-oasis-42055.herokuapp.com/books",
+        inputs
+      );
       navigate("/");
     } catch (err) {
       console.log(err);

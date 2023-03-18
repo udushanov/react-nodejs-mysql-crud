@@ -4,19 +4,28 @@ import cors from "cors";
 
 const app = express();
 
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "5130921a",
+//   database: "test",
+// });
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "5130921a",
-  database: "test",
+  host: "us-cdbr-east-06.cleardb.net",
+  user: "bfaaa0d91f52a2",
+  password: "3a5f6beb",
+  database: "heroku_37225384f04281d",
 });
+
+//bfaaa0d91f52a2:3a5f6beb@us-cdbr-east-06.cleardb.net/heroku_37225384f04281d?reconnect=true
 
 app.use(express.json());
 app.use(cors());
 
 app.get("/books", (req, res) => {
   db.query("SELECT * FROM books", (err, data) => {
-    if (err) return res.json(data);
+    if (err) return res.json(err);
     return res.json(data);
   });
 });

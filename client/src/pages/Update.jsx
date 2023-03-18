@@ -22,7 +22,10 @@ export function Update() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put("http://localhost:8800/books/" + bookId, inputs);
+      await axios.put(
+        "https://pacific-oasis-42055.herokuapp.com/books/" + bookId,
+        inputs
+      );
       navigate("/");
     } catch (err) {
       console.log(err);

@@ -8,7 +8,9 @@ export function Books() {
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/books");
+        const res = await axios.get(
+          "https://pacific-oasis-42055.herokuapp.com/books"
+        );
         setBooks(res.data);
       } catch (err) {
         console.log(err);
@@ -21,7 +23,9 @@ export function Books() {
   const handleDelete = async (id) => {
     try {
       console.log(id);
-      await axios.delete("http://localhost:8800/books/" + id);
+      await axios.delete(
+        "https://pacific-oasis-42055.herokuapp.com/books/" + id
+      );
       window.location.reload();
     } catch (err) {
       console.log(err);
