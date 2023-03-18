@@ -53,6 +53,10 @@ in body we should write our json
 app.use(express.json()) //allows us to send method post from user (sending json file from cilent)
 */
 
+app.delete('/books/:id', (req, res) => {
+
+})
+
 app.listen(8800, () => {
   console.log("The server is running");
 });
