@@ -10,7 +10,7 @@ export function Add() {
     cover: "",
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,15 +19,15 @@ export function Add() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8800/books", inputs);
-      navigate('/')
+      await axios.post("http://localhost:8800/books", inputs);
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <div className="from">
+    <div className="form">
       <h1>Add new book</h1>
       <input
         type="text"
