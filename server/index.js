@@ -18,8 +18,6 @@ const db = mysql.createConnection({
   database: "heroku_37225384f04281d",
 });
 
-//bfaaa0d91f52a2:3a5f6beb@us-cdbr-east-06.cleardb.net/heroku_37225384f04281d?reconnect=true
-
 app.use(express.json());
 app.use(cors());
 
@@ -91,6 +89,6 @@ app.put("/books/:id", (req, res) => {
   );
 });
 
-app.listen(8800, () => {
+app.listen(process.env.PORT || 8800, () => {
   console.log("The server is running");
 });
