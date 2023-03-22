@@ -4,13 +4,6 @@ import cors from "cors";
 
 const app = express();
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "5130921a",
-//   database: "test",
-// });
-
 const db = mysql.createConnection({
   host: "us-cdbr-east-06.cleardb.net",
   user: "bfaaa0d91f52a2",
